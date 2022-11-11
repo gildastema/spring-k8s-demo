@@ -32,7 +32,7 @@ jobs:
         distribution: 'temurin'
     - name: Build with Gradle
       run: chmod +x ./gradlew && ./gradlew build
-
+## Send to Docker
     - name: Set Up QMENU to connect to docker
       uses: docker/setup-qemu-action@v2
     - name: Set Up Docker Build Image
@@ -45,6 +45,6 @@ jobs:
     - name: Build and Push
       uses: docker/build-push-action@v3
       with:
-        push: { { github.event_name != 'pull_request' } }
+        push: true
         tags: gildastema/spring-k8s-demo:latest
 
