@@ -2,6 +2,7 @@ FROM openjdk:17-jdk-alpine as builder
 RUN mkdir -p app/source
 COPY . app/source
 WORKDIR app/source
+RUN chmod +x ./gradlew
 RUN ./gradlew  build -x test
 
 FROM openjdk:17-jdk-alpine
