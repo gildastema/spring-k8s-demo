@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sping-k8s-demo
+  labels:
+    app: sping-k8s-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: sping-k8s-demo
+      labels:
+        app: sping-k8s-demo
+    spec:
+      containers:
+        - name: sping-k8s-demo
+          image: gildastema/spring-k8s-demo:0.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: user
+            - name: DB_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: password
+            - name: DB_PORT
+              value: "5432"
+
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: sping-k8s-demo
