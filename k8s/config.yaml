@@ -5,3 +5,4 @@ metadata:
 data:
   db_port: "5432"
   db_host: "postgres"
+  db_name: "spring-k8s-db"

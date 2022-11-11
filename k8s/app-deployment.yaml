@@ -40,6 +40,12 @@ spec:
                   key: db_host
                   name: spring-k8s-config
 
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: db_name
+                  name: spring-k8s-config
+
       restartPolicy: Always
   selector:
     matchLabels:
