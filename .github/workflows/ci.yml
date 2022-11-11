@@ -12,16 +12,6 @@ permissions:
 jobs:
   build:
 
-    services:
-      postgres:
-        image: postgres:12
-        env:
-          POSTGRES_USER: habibi
-          POSTGRES_DB: spring_k8s_db
-          POSTGRES_PASSWORD: secret
-          POSTGRES_PORT: 5432
-
-
     runs-on: ubuntu-latest
 
     steps:
@@ -33,12 +23,7 @@ jobs:
         distribution: 'temurin'
     - name: Build Application with Gradle
       run: chmod +x ./gradlew && ./gradlew build
-      env:
-        DB_USER: habibi
-        DB_PWD: secret
-        DB_NAME: spring_k8s_db
-        DB_PORT: 5432
-        DB_HOST: postgres
+
 ## Send to Docker
     - name: Set Up QMENU to connect to docker
       uses: docker/setup-qemu-action@v2

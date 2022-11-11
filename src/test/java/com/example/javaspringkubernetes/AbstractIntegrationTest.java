@@ -12,7 +12,9 @@ import org.springframework.http.ResponseEntity;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, properties = {
         "spring.jpa.hibernate.ddl-auto=create-drop",
+        "spring.datasource.driver-class-name=org.h2.Driver"
 })
+@AutoConfigureTestDatabase
 public class AbstractIntegrationTest {
 
     @LocalServerPort
