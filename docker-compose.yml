@@ -10,3 +10,13 @@ services:
       POSTGRES_USER: "habibi"
       POSTGRES_PASSWORD: "secret"
       POSTGRES_DB: "spring-k8s"
+
+  app:
+    image: gildastema/spring-k8s-demo:latest
+    ports:
+      - "8085:8080"
+    environment:
+      DB_USER: "habibi"
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: "spring-k8s"
