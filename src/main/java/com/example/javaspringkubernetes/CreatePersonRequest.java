@@ -1,6 +1,7 @@
 package com.example.javaspringkubernetes;
 
 import com.gildastema.validations.constraints.Unique;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,7 +9,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@NoArgsConstructor @Data
+@NoArgsConstructor @Data @AllArgsConstructor
 public class CreatePersonRequest {
 
     @NotNull @NotBlank @Email @Unique(field = "email", table = "persons")

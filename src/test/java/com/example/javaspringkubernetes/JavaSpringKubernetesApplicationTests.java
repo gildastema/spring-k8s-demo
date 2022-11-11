@@ -12,8 +12,5 @@ class JavaSpringKubernetesApplicationTests {
     void contextLoads() {
     }
 
-    @Test void testOK(){
-       fail();
-    }
 
 }
