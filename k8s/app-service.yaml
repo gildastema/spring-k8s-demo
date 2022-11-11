@@ -4,7 +4,9 @@ metadata:
   name: spring-k8s-service
 spec:
   selector:
-    app: sping-k8s-demo
+    app: spring-k8s-demo
   ports:
     - port: 8080
+      protocol: TCP
+      targetPort: 8080
   type: NodePort
