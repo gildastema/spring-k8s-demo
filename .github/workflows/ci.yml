@@ -46,5 +46,5 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: gildastema/spring-k8s-demo:latest
+        tags: gildastema/spring-k8s-demo:latest,gildastema/spring-k8s-demo:0.1
 

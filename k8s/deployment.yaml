@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sping-k8s-demo
+  labels:
+    app: sping-k8s-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: sping-k8s-demo
+      labels:
+        app: sping-k8s-demo
+    spec:
+      containers:
+        - name: sping-k8s-demo
+          image: gildastema/spring-k8s-demo:latest
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: sping-k8s-demo
