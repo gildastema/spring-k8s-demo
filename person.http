@@ -1,14 +1,14 @@
 ### Send POST request with json body
-POST http://localhost:8080/api/persons
+POST http://localhost:57397/api/persons
 Content-Type: application/json
 
 {
   "name": "John Doe",
-  "email" : "john@doe.fr"
+  "email" : "john@doe2.fr"
 }
 
 
 ### Get List of Persons
 
-GET http://localhost:8080/api/persons
+GET http://localhost:57397/api/persons
 Accept: application/json
